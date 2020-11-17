@@ -13,8 +13,8 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.devonfw.app.java.order.general.logic.api.to.ItemSearchCriteriaTo;
 import com.devonfw.app.java.order.orderservice.dataaccess.api.ItemEntity;
+import com.devonfw.app.java.order.orderservice.logic.api.to.ItemSearchCriteriaTo;
 import com.devonfw.module.basic.common.api.query.StringSearchConfigTo;
 import com.devonfw.module.jpa.dataaccess.api.QueryUtil;
 import com.devonfw.module.jpa.dataaccess.api.data.DefaultRepository;

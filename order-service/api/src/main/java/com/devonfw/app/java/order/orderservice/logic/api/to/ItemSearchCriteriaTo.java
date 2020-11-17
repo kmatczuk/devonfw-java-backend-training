@@ -1,4 +1,4 @@
-package com.devonfw.app.java.order.general.logic.api.to;
+package com.devonfw.app.java.order.orderservice.logic.api.to;
 
 import org.springframework.data.domain.Pageable;
 

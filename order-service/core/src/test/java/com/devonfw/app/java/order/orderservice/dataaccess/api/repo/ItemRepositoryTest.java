@@ -10,8 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.data.domain.Page;
 
-import com.devonfw.app.java.order.general.logic.api.to.ItemSearchCriteriaTo;
 import com.devonfw.app.java.order.orderservice.dataaccess.api.ItemEntity;
+import com.devonfw.app.java.order.orderservice.logic.api.to.ItemSearchCriteriaTo;
 import com.devonfw.module.test.common.base.ComponentTest;
 
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
