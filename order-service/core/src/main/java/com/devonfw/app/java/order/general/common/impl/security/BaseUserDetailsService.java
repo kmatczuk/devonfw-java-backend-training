@@ -1,10 +1,10 @@
 package com.devonfw.app.java.order.general.common.impl.security;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -81,9 +81,10 @@ public class BaseUserDetailsService implements UserDetailsService {
 
   private Collection<String> getRoles(String username) {
 
-    Collection<String> roles = new ArrayList<>();
-    // TODO for a reasonable application you need to retrieve the roles of the user from a central IAM system
-    roles.add(username);
+    UserDetails userDetails = getAmBuilder().getDefaultUserDetailsService().loadUserByUsername(username);
+    Collection<String> roles = userDetails.getAuthorities().stream().map(authority -> authority.getAuthority())
+        .collect(Collectors.toList());
+
     return roles;
   }
 

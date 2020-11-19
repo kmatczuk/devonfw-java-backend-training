@@ -1,5 +1,6 @@
 package com.devonfw.app.java.order.orderservice.logic.api.usecase;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.data.domain.Page;
@@ -16,6 +17,13 @@ public interface UcFindItem {
    * @return The {@link ItemEto} with id 'id'
    */
   ItemEto findItem(long id);
+
+  /**
+   * Returns a list with all {@link ItemEto}.
+   *
+   * @return List wtih all {@link ItemEto}
+   */
+  List<ItemEto> findAllItems();
 
   /**
    * Returns a paginated list of Item matching the search criteria.

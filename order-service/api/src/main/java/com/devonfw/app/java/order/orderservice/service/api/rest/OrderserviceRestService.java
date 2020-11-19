@@ -1,5 +1,6 @@
 package com.devonfw.app.java.order.orderservice.service.api.rest;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ws.rs.Consumes;
@@ -28,6 +29,10 @@ public interface OrderserviceRestService extends RestService {
   @GET
   @Path("/items/{id}/")
   public ItemEto findItemById(@PathParam("id") Long id);
+
+  @GET
+  @Path("/items")
+  public List<ItemEto> findAllItems();
 
   @POST
   @Path("/items")

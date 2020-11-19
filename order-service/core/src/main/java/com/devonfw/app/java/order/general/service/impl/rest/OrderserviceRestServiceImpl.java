@@ -1,5 +1,6 @@
 package com.devonfw.app.java.order.general.service.impl.rest;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -75,6 +76,12 @@ public class OrderserviceRestServiceImpl implements OrderserviceRestService {
   public boolean deleteOrder(Long id) {
 
     return this.orderservice.deleteOrder(id);
+  }
+
+  @Override
+  public List<ItemEto> findAllItems() {
+
+    return this.orderservice.findAllItems();
   }
 
 }

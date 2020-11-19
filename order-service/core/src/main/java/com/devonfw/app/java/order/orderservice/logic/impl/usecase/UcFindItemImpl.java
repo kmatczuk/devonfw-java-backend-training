@@ -1,5 +1,6 @@
 package com.devonfw.app.java.order.orderservice.logic.impl.usecase;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Named;
@@ -46,6 +47,12 @@ public class UcFindItemImpl extends AbstractItemUc implements UcFindItem {
   public Set<ItemEto> findItemsByName(String name) {
 
     return getBeanMapper().mapSet(getItemRepository().findByName(name), ItemEto.class);
+  }
+
+  @Override
+  public List<ItemEto> findAllItems() {
+
+    return getBeanMapper().mapList(getItemRepository().findAll(), ItemEto.class);
   }
 
 }

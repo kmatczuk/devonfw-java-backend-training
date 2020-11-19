@@ -2,9 +2,49 @@
 <access-control-schema>
   <group id="ReadMasterData" type="group">
     <permissions>
-      
+      <permission id="FindItem"/>
+      <permission id="FindOrder"/>
+      <permission id="FindCustomer"/>
     </permissions>
   </group>
 
-  
+  <group id="Waiter" type="group">
+    <inherits>
+      <group-ref>ReadMasterData</group-ref>
+    </inherits>
+    <permissions>
+      <permission id="SaveOrder"/>
+    </permissions>
+  </group>
+
+  <group id="Barkeeper" type="group">
+    <inherits>
+      <group-ref>Waiter</group-ref>
+    </inherits>
+    <permissions>
+      <permission id="DeleteOrder"/>
+    </permissions>
+  </group>
+
+  <group id="Cook" type="group">
+  <inherits>
+    <group-ref>Barkeeper</group-ref>
+  </inherits>
+  <permissions>
+    <permission id="SaveItem"/>
+    <permission id="DeleteItem"/>
+  </permissions>
+  </group>
+
+  <group id="Chief" type="group">
+  <inherits>
+    <group-ref>Cook</group-ref>
+  </inherits>
+  <permissions>
+    <permission id="SaveCustomer"/>
+    <permission id="DeleteCustomer"/>
+    <permission id="RaisePrice"/>
+  </permissions>
+  </group>
+
 </access-control-schema>

@@ -68,7 +68,7 @@ public class ItemRepositoryTest extends ComponentTest {
     // given
     setUpTestdata();
     ItemSearchCriteriaTo criteria = new ItemSearchCriteriaTo();
-    criteria.setName("spagheTTi boloGnEse");
+    criteria.setName("olo");
 
     // when
     Page<ItemEntity> foundItems = this.itemRepository.findItemsByNameWithCaseInsesitive(criteria);
@@ -79,7 +79,7 @@ public class ItemRepositoryTest extends ComponentTest {
     // then
     assertThat(foundItem).isNotNull();
     assertThat(foundItems.getContent()).hasSize(1);
-    assertThat(foundItem.getName()).isEqualToIgnoringCase(criteria.getName());
+    assertThat(foundItem.getName()).isEqualToIgnoringCase("spaghetti bolognese");
   }
 
   @Test
